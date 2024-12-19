@@ -43,7 +43,21 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="AnimatedScatter.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="ClassicChart.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AnimatedScatter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassicChart.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

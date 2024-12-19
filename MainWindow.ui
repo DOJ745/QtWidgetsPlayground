@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>908</width>
-    <height>553</height>
+    <width>1160</width>
+    <height>606</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -273,13 +273,43 @@
      <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QWidget" name="threeDimensionChartWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>30</y>
+      <width>571</width>
+      <height>191</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="classicChartWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>240</y>
+      <width>571</width>
+      <height>301</height>
+     </rect>
+    </property>
+   </widget>
+   <zorder>classicChartWidget</zorder>
+   <zorder>verticalLayoutWidget</zorder>
+   <zorder>listWidget</zorder>
+   <zorder>tabWidget</zorder>
+   <zorder>frame</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>toolBox</zorder>
+   <zorder>label_4</zorder>
+   <zorder>threeDimensionChartWidget</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>908</width>
+     <width>1160</width>
      <height>21</height>
     </rect>
    </property>

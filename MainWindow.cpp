@@ -1,6 +1,8 @@
 #include "MainWindow.h"
 #include <QPropertyAnimation>
 #include <QGraphicsOpacityEffect>
+#include "AnimatedScatter.h"
+#include "ClassicChart.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -36,6 +38,18 @@ MainWindow::MainWindow(QWidget *parent)
     animationColor->start(QAbstractAnimation::DeleteWhenStopped); // Автоматическое удаление после завершения
 
     connect(ui.horizontalSlider, &QSlider::valueChanged, this, &MainWindow::onHorizontalSliderChanged);
+
+    // Добавляем 3D график в главное окно
+    AnimatedScatter* animatedScatter = new AnimatedScatter();
+    QVBoxLayout* layout3D = new QVBoxLayout(ui.threeDimensionChartWidget);
+    layout3D->addWidget(animatedScatter);
+    ui.threeDimensionChartWidget->setLayout(layout3D);
+    
+    // Добавляем 2D график в главное окно
+    ClassicChart* classicChart = new ClassicChart();
+    QVBoxLayout* layout2D = new QVBoxLayout(ui.classicChartWidget);
+    layout2D->addWidget(classicChart);
+	ui.classicChartWidget->setLayout(layout2D);
 }
 
 MainWindow::~MainWindow()

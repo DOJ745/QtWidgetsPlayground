@@ -38,7 +38,21 @@ public slots:
     {
         int pos = 0;
         QString tempText = text;
+
+        tempText.replace(',', '.'); // Заменяем запятую на точку
+        bool ok = false;
+        double value = tempText.toDouble(&ok); // Преобразуем текст в double
+
         QValidator::State state = ui.lineEdit->validator()->validate(tempText, pos);
+
+        if (state == QValidator::Acceptable || state == QValidator::Intermediate)
+        {
+            // Дополнительно проверяем диапазон
+            if (value < -500.0 || value > 500.0)
+            {
+                state = QValidator::Invalid; // Считаем, вышедшее за пределы
+            }
+        }
 
         switch (state) 
         {
